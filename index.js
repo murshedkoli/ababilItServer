@@ -1,6 +1,5 @@
 const express = require('express')
-const app = express()
-const port = 5000
+
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
@@ -8,7 +7,7 @@ const ObjectId = require('mongodb').ObjectID;
 
 const uri = "mongodb+srv://ababilit:bYpBAUmDZ4sGf8Y@cluster0.dmtd1.mongodb.net/ababilIt?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
+const app = express()
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -110,4 +109,4 @@ console.log('connected')
 
 
 
-app.listen(process.env.port || port)
+app.listen(process.env.PORT || 5000)
